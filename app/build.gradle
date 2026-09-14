@@ -5,7 +5,7 @@ plugins {
 android {
     namespace 'diala.b.dialaapp'
     compileSdk {
-        version = release(33)
+        version = release(37)
     }
 
     defaultConfig {
