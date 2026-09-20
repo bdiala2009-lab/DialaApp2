@@ -16,7 +16,6 @@ public class MyUser {
 
     }
 
-
     public long getKeyid() {
         return keyid;
     }

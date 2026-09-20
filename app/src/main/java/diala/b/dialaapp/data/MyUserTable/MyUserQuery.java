@@ -3,7 +3,7 @@ package diala.b.dialaapp.data.MyUserTable;
 import androidx.room.Query;
 
 import java.util.List;
-
+@Dao
 public interface MyUserQuery {
     @Query("SELECT * FROM MyUser")
     List<MyUser> getAll();
@@ -21,20 +21,20 @@ public interface MyUserQuery {
 
     MyUser checkEmail(String myEmail);
     // اضافة مستعمل او مجموعة مستعملين
-
+    @Insert
     void insertAll(MyUser... users);
     // حذف
-
+    @Delete
     void delete(MyUser user);
     //حذف حسب الرقم المميز id
     @Query("Delete From MyUser WHERE keyid=:id ")
 
     void delete(int id);
     //اضافة مستعمل واحد
-
+    @Insert
     void insert(MyUser myUser);
     //تعديل مستعمل او قائمة مستعملين
-
+    @Update
     void update(MyUser...values);
 }
 
