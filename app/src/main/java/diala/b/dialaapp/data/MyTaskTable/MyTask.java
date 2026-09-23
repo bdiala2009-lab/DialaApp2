@@ -21,7 +21,7 @@ public class MyTask
     /** هل تمت المهمة */
     public boolean isCompleted;
     /** رقم موضوع المهمة */
-    public long tag;
+    public long subjld;
     /** رقم المستخدم الذي أضاف المهمة */
     public long userId;
 
@@ -68,12 +68,12 @@ public class MyTask
         isCompleted = completed;
     }
 
-    public long getTag() {
-        return tag;
+    public long getSubjld() {
+        return subjld;
     }
 
-    public void setTag(long tag) {
-        this.tag = tag;
+    public void setSubjld(long subjld) {
+        this.subjld = subjld;
     }
 
     public long getUserId() {
