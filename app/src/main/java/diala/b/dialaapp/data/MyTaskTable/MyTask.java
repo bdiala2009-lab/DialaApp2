@@ -1,45 +1,100 @@
 package diala.b.dialaapp.data.MyTaskTable;
+
+import androidx.room.PrimaryKey;
+
+/**
+ * فئة تمثل مهمة
+ */
 @Entity
-public class MyTask {
-        @PrimaryKey(autoGenerate = true)
-        /** مفتاح أساسي */
-        public int keyId;
-        /** أولوية */
-        public int importance;
-        /** عنوان المهمة */
-        public String shortTitle;
-        /** نص المهمة */
-        public String text;
-        /** لون بناء المهمة */
-        public long time;
-
-
-
+public class MyTask
+{
+    @PrimaryKey(autoGenerate = true)
+    /** رقم المهمة */
+    /** 5-1: رقم المهمة */
+    public int importance;
+    /** عنوان قصير */
+    public String shortTitle;
+    /** نص المهمة */
+    public String text;
+    /** زمن بناء المهمة */
+    public long time;
     /** هل تمت المهمة */
-        public boolean isCompleted;
-
-    public int getKeyId() {
-        return keyId;
-    }
-
-    public void setKeyId(int keyId) {
-        this.keyId = keyId;
-    }
-
+    public boolean isCompleted;
     /** رقم موضوع المهمة */
-        public int taskId;
-        /** رقم المستخدم الذي أضاف المهمة */
-        public long userId;
+    public long tag;
+    /** رقم المستخدم الذي أضاف المهمة */
+    public long userId;
+
+    public MyTask() {
     }
-public MyTask() {
 
-}
-public int getKeyId() {
-    return keyId;
-}
+    public int getImportance() {
+        return importance;
+    }
 
-public void setKeyId(int keyId) {
-    this.keyId = keyId;
-}
+    public void setImportance(int importance) {
+        this.importance = importance;
+    }
 
+    public String getText() {
+        return text;
+    }
+
+    public void setText(String text) {
+        this.text = text;
+    }
+
+    public String getShortTitle() {
+        return shortTitle;
+    }
+
+    public void setShortTitle(String shortTitle) {
+        this.shortTitle = shortTitle;
+    }
+
+    public long getTime() {
+        return time;
+    }
+
+    public void setTime(long time) {
+        this.time = time;
+    }
+
+    public boolean isCompleted() {
+        return isCompleted;
+    }
+
+    public void setCompleted(boolean completed) {
+        isCompleted = completed;
+    }
+
+    public long getTag() {
+        return tag;
+    }
+
+    public void setTag(long tag) {
+        this.tag = tag;
+    }
+
+    public long getUserId() {
+        return userId;
+    }
+
+    public void setUserId(long userId) {
+        this.userId = userId;
+    }
+
+
+    @Override
+    public String toString() {
+        return "MyTask{" +
+                "importance=" + importance +
+                ", shortTitle='" + shortTitle + '\'' +
+                ", text='" + text + '\'' +
+                ", time=" + time +
+                ", isCompleted=" + isCompleted +
+                ", tag=" + tag +
+                ", userId=" + userId +
+                '}';
+    }
 }
