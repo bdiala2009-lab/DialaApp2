@@ -8,7 +8,7 @@ import androidx.room.Update;
 
 import java.util.List;
 
-public interface MySubjectQuery {
+
     @Dao
     public interface MySubjectQuery {
 
@@ -46,4 +46,4 @@ public interface MySubjectQuery {
         @Query("SELECT * FROM MySubject WHERE title=:sub")
         MySubject checkSubject(String sub);
     }
-}
+
