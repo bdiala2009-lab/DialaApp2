@@ -1,8 +1,9 @@
 package diala.b.dialaapp.data.MyUserTable;
 
 import androidx.room.ColumnInfo;
+import androidx.room.Entity;
 import androidx.room.PrimaryKey;
-
+@Entity
 public class MyUser {
     @PrimaryKey(autoGenerate = true)//تحديد الصفة كمفتاح رئيسي والذي يُنتجح بشكل تلقائي
     public long keyid;

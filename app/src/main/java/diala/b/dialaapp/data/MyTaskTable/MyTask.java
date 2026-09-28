@@ -1,6 +1,7 @@
 package diala.b.dialaapp.data.MyTaskTable;
 
-import androidx.room.PrimaryKey;
+import androidx.room.Entity;
+ import androidx.room.PrimaryKey;
 
 /**
  * فئة تمثل مهمة
@@ -8,9 +9,14 @@ import androidx.room.PrimaryKey;
 @Entity
 public class MyTask
 {
-    @PrimaryKey(autoGenerate = true)
+    public long getSubjId() {
+        return subjId;
+    }
+
+public long keyid;
     /** رقم المهمة */
     /** 5-1: رقم المهمة */
+
     public int importance;
     /** عنوان قصير */
     public String shortTitle;
@@ -21,7 +27,7 @@ public class MyTask
     /** هل تمت المهمة */
     public boolean isCompleted;
     /** رقم موضوع المهمة */
-    public long subjld;
+    public long subjId;
     /** رقم المستخدم الذي أضاف المهمة */
     public long userId;
 
@@ -69,11 +75,11 @@ public class MyTask
     }
 
     public long getSubjld() {
-        return subjld;
+        return subjId;
     }
 
     public void setSubjld(long subjld) {
-        this.subjld = subjld;
+        this.subjId= subjld;
     }
 
     public long getUserId() {
@@ -84,16 +90,30 @@ public class MyTask
         this.userId = userId;
     }
 
+    public long getKeyid() {
+        return keyid;
+    }
+
+    public void setKeyid(long keyid) {
+        this.keyid = keyid;
+    }
+
+    public void setSubjId(long subjId) {
+        this.subjId = subjId;
+    }
+
+
 
     @Override
     public String toString() {
         return "MyTask{" +
-                "importance=" + importance +
+                "keyid=" + keyid +
+                ", importance=" + importance +
                 ", shortTitle='" + shortTitle + '\'' +
                 ", text='" + text + '\'' +
                 ", time=" + time +
                 ", isCompleted=" + isCompleted +
-                ", tag=" + tag +
+                ", subjId=" + subjId +
                 ", userId=" + userId +
                 '}';
     }

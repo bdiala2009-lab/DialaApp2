@@ -55,7 +55,9 @@ public interface MyTaskQuery {
     void deleteTask(MyTask... tasks);
 
     @Query("DELETE FROM MyTask WHERE keyId=:kid")
-    void deleteTask(long kid);
+    default void deleteTask(long kid) {
+
+    }
 
     /**
      * استخراج جميع المهامات التابعة لرقم الموضوع

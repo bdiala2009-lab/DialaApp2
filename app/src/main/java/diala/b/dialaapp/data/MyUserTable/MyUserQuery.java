@@ -1,6 +1,10 @@
 package diala.b.dialaapp.data.MyUserTable;
 
+import androidx.room.Dao;
+import androidx.room.Delete;
+import androidx.room.Insert;
 import androidx.room.Query;
+import androidx.room.Update;
 
 import java.util.List;
 @Dao
@@ -36,6 +40,7 @@ public interface MyUserQuery {
     //تعديل مستعمل او قائمة مستعملين
     @Update
     void update(MyUser...values);
+
 }
 
 
