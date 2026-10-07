@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DialaApp2">
         <activity
-            android:name=".MainActivity"
+            android:name=".viewPkg.MainActivity"
             android:exported="true"
             android:windowSoftInputMode="adjustResize">
             <intent-filter>

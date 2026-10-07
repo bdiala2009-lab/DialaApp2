@@ -5,9 +5,10 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".viewPkg.MainActivity">
 
     <TextView
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Hello World!"
@@ -15,5 +16,27 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnAddTaskScreen"
+        android:layout_width="331dp"
+        android:layout_height="96dp"
+        android:background="#F284A9"
+        android:text="Add New Task"
+        android:textColor="#E2A0E9"
+        android:textColorHighlight="#E9B6C6"
+        android:textColorHint="#EF97B6"
+        app:iconTint="#EF99B2"
+        app:iconTintMode="add"
+        tools:layout_editor_absoluteX="50dp"
+        tools:layout_editor_absoluteY="66dp" />
+
+    <Button
+        android:id="@+id/btnRegisterScreen"
+        android:layout_width="335dp"
+        android:layout_height="101dp"
+        android:text="Register User"
+        tools:layout_editor_absoluteX="52dp"
+        tools:layout_editor_absoluteY="211dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

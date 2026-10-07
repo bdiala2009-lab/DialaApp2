@@ -1,4 +1,4 @@
-package diala.b.dialaapp;
+package diala.b.dialaapp.viewPkg;
 
 import android.os.Bundle;
 
@@ -8,6 +8,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import diala.b.dialaapp.R;
 import diala.b.dialaapp.data.AppDataBase;
 import diala.b.dialaapp.data.mySubjectTable.MySubject;
 import diala.b.dialaapp.data.mySubjectTable.MySubjectQuery;
