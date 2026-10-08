@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
@@ -19,24 +19,25 @@
 
     <Button
         android:id="@+id/btnAddTaskScreen"
-        android:layout_width="331dp"
-        android:layout_height="96dp"
-        android:background="#F284A9"
+        android:layout_width="299dp"
+        android:layout_height="84dp"
+        android:background="#E39FE9"
+        android:shadowColor="#EF9AB6"
         android:text="Add New Task"
         android:textColor="#E2A0E9"
         android:textColorHighlight="#E9B6C6"
         android:textColorHint="#EF97B6"
         app:iconTint="#EF99B2"
         app:iconTintMode="add"
-        tools:layout_editor_absoluteX="50dp"
-        tools:layout_editor_absoluteY="66dp" />
+        tools:layout_editor_absoluteX="52dp"
+        tools:layout_editor_absoluteY="84dp" />
 
     <Button
         android:id="@+id/btnRegisterScreen"
         android:layout_width="335dp"
         android:layout_height="101dp"
         android:text="Register User"
-        tools:layout_editor_absoluteX="52dp"
+        tools:layout_editor_absoluteX="38dp"
         tools:layout_editor_absoluteY="211dp" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
