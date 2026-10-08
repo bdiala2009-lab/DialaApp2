@@ -1,4 +1,4 @@
-package diala.b.dialaapp.data;
+package diala.b.dialaapp.model;
 
 import android.content.Context;
 
@@ -6,12 +6,12 @@ import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
-import diala.b.dialaapp.data.MyTaskTable.MyTask;
-import diala.b.dialaapp.data.MyTaskTable.MyTaskQuery;
-import diala.b.dialaapp.data.MyUserTable.MyUser;
-import diala.b.dialaapp.data.MyUserTable.MyUserQuery;
-import diala.b.dialaapp.data.mySubjectTable.MySubject;
-import diala.b.dialaapp.data.mySubjectTable.MySubjectQuery;
+import diala.b.dialaapp.model.MyTaskTable.MyTask;
+import diala.b.dialaapp.model.MyTaskTable.MyTaskQuery;
+import diala.b.dialaapp.model.MyUserTable.MyUser;
+import diala.b.dialaapp.model.MyUserTable.MyUserQuery;
+import diala.b.dialaapp.model.mySubjectTable.MySubject;
+import diala.b.dialaapp.model.mySubjectTable.MySubjectQuery;
 
 
     /**

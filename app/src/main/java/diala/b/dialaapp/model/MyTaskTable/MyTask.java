@@ -1,7 +1,6 @@
-package diala.b.dialaapp.data.MyTaskTable;
+package diala.b.dialaapp.model.MyTaskTable;
 
 import androidx.room.Entity;
- import androidx.room.PrimaryKey;
 
 /**
  * فئة تمثل مهمة

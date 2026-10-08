@@ -1,5 +1,6 @@
-package diala.b.dialaapp.data.MyTaskTable;
+package diala.b.dialaapp.model.MyTaskTable;
 
+import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
@@ -68,5 +69,10 @@ public interface MyTaskQuery {
             " ORDER BY importance DESC")
     List<MyTask> getTasksBySubjId(long key_id);
 
+    LiveData<List<MyTask>> getTasksByUserId(long userId);
+
+    LiveData<MyTask> getTaskById(long taskId);
+
+    LiveData<List<MyTask>> getTasksByTitle();
 }
 

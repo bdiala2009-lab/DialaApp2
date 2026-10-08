@@ -1,4 +1,4 @@
-package diala.b.dialaapp.data.mySubjectTable;
+package diala.b.dialaapp.model.mySubjectTable;
 
 import androidx.room.Dao;
 import androidx.room.Delete;

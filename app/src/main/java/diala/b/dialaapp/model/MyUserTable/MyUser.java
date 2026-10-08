@@ -1,4 +1,4 @@
-package diala.b.dialaapp.data.MyUserTable;
+package diala.b.dialaapp.model.MyUserTable;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;

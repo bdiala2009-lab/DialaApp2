@@ -9,9 +9,9 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import diala.b.dialaapp.R;
-import diala.b.dialaapp.data.AppDataBase;
-import diala.b.dialaapp.data.mySubjectTable.MySubject;
-import diala.b.dialaapp.data.mySubjectTable.MySubjectQuery;
+import diala.b.dialaapp.model.AppDataBase;
+import diala.b.dialaapp.model.mySubjectTable.MySubject;
+import diala.b.dialaapp.model.mySubjectTable.MySubjectQuery;
 
 public class MainActivity extends AppCompatActivity {
 
