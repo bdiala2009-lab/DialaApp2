@@ -18,54 +18,44 @@ import diala.b.dialaapp.model.MyTaskTable.MyTaskQuery;
         */
 
 public class TaskRepository {
-   private MyTaskQuery taskQuery;//واجهة اسعلامات
+    private MyTaskQuery taskQuery;//واجهة اسعلامات
     private LiveData<List<MyTask>> allTasks;//مبنى معطيات يحوي جميع المهام المستخرجة
-/**
- * منشئ الكلاس(constructor)
- * يقوم بتهيئة قاعدة البيانات واسترجاع كائن الـ DAO الخاص بالمهام.
- *
- * @param application سياق التطبيق (Application Context) المستخدم لإنشاء قاعدة البيانات.
- */
-public TaskRepository(Application application){
-    AppDataBase db= AppDataBase.getDB(application);
-    taskQuery= db.getMyTaskQuery();
-    allTasks= (LiveData<List<MyTask>>) taskQuery.getAllTasks();
-}
+
     /**
-     *LiveData جلب جميع المهام الموجودة في قاعدة البيانات كـ.
+     * منشئ الكلاس(constructor)
+     * يقوم بتهيئة قاعدة البيانات واسترجاع كائن الـ DAO الخاص بالمهام.
+     *
+     * @param application سياق التطبيق (Application Context) المستخدم لإنشاء قاعدة البيانات.
+     */
+    public TaskRepository(Application application) {
+        AppDataBase db = AppDataBase.getDB(application);
+        taskQuery = db.getMyTaskQuery();
+        allTasks = (LiveData<List<MyTask>>) taskQuery.getAllTasks();
+    }
+
+    /**
+     * LiveData جلب جميع المهام الموجودة في قاعدة البيانات كـ.
      *
      * @return قائمة بجميع المهام المحدثة تلقائياً.
      */
-public LiveData<List<MyTask>> getAllTasks (){
-    return allTasks;
+    public LiveData<List<MyTask>> getAllTasks() {
+        return allTasks;
     }
+/**
+ * إدراج مهمة أو عدة مهمات جديدة في قاعدة البيانات.
+ *
+ * @param t المهام المراد إضافتها.
+ */
+public void insertTask (MyTask...t){
+    taskQuery.insertTask(t);
+}
     /**
-     * جلب المهام المرتبطة بمعرف مستخدم معين (User ID).
+     * تحديث مهمة أو عدة مهمات في قاعدة البيانات.
      *
-     * @param userId معرف المستخدم المراد جلب مهامه.
-     * @return قائمة المهام الخاصة بالمستخدم المحدد.
+     * @param tasks المهام المراد تحديثها.
      */
-public LiveData<List<MyTask>>getTaskByUserId(long userId){
-    return taskQuery.getTasksByUserId(userId);
-}
-/**
- * جلب مهمة معينة بناءً على معرفها الفريد (Task ID).
- *
- * @param taskId معرف المهمة الفريد.
- * @return كائن المهمة المطلوب.
- */
-public LiveData <MyTask> getTaskById(long taskId){
-    return taskQuery.getTaskById(taskId);
-}
-/**
- * البحث عن المهام التي تتطابق عناوينها مع النص المدخل.
- *
- * @param title النص أو الكلمة المراد البحث عنها في العنوان.
- * @return قائمة المهام المطابقة.
- */
-public LiveData<List<MyTask>>getTaskByTitle(String title){
-    return taskQuery.getTasksByTitle()
-}
+public void updateTask(MyTask...tasks){
+    taskQuery.updateTask(tasks);
 }
 
-
+}

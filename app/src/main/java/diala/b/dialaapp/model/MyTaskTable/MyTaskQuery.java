@@ -69,10 +69,6 @@ public interface MyTaskQuery {
             " ORDER BY importance DESC")
     List<MyTask> getTasksBySubjId(long key_id);
 
-    LiveData<List<MyTask>> getTasksByUserId(long userId);
 
-    LiveData<MyTask> getTaskById(long taskId);
-
-    LiveData<List<MyTask>> getTasksByTitle();
 }
 
