@@ -57,5 +57,20 @@ public void insertTask (MyTask...t){
 public void updateTask(MyTask...tasks){
     taskQuery.updateTask(tasks);
 }
-
+/**
+* حذف مهمة أو عدة مهمات من قاعدة البيانات.
+            *
+            * @param tasks المهام المراد حذفها.
+            */
+public void deleteTask(MyTask... tasks) {
+    taskQuery.deleteTask(tasks);
+}
+/**
+ * حذف مهمة محددة باستخدام معرفها الفريد (Task ID).
+ *
+ * @param taskId معرف المهمة المراد حذفها.
+ */
+public void deleteTask(long taskId){
+    taskQuery.deleteTask(taskId);
+}
 }
