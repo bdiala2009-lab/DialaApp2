@@ -33,5 +33,9 @@ public class UserRepository {
 public LiveData<List<MyUser>>getAllUsers(){
     return allUsers;
 }
+
+public LiveData<MyUser>l(userIds){
+    return userQuery.loadAllByIds(userIds);
+}
 }
 
