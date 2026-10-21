@@ -34,8 +34,30 @@ public LiveData<List<MyUser>>getAllUsers(){
     return allUsers;
 }
 
-public LiveData<MyUser>l(userIds){
-    return userQuery.loadAllByIds(userIds);
+public LiveData<List<MyUser>>loadsAllByIds(int[] Id){
+    return  MyUserQuery.loadsAllByIds(Id);
 }
+    public  LiveData<List<MyUser>>checkEmailPassw(String myEmail,String myPassw){
+    return MyUserQuery.checkEmailPassw(myEmail,myPassw);
+    }
+    public LiveData<List<MyUser>> checkEmail(String myEmail){
+    return userQuery.checkEmail(myEmail);
+    }
+    public void insert(MyUser...Users){
+        userQuery.insertAll(Users);
+    }
+    public void delete (MyUser...Users){
+        userQuery.delete(Users);
+    }
+    public void delete(int id){
+    MyUserQuery.delete(id);
+    }
+    public void insert (MyUser myUser){
+    userQuery.insert(myUser);
+    }
+    public void update(MyUser...values){
+    MyUserQuery.update(values);
+    }
 }
+
 
