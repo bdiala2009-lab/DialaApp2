@@ -10,22 +10,18 @@ import androidx.room.Update;
 import java.util.List;
 @Dao
 public interface MyUserQuery {
-    static LiveData<List<MyUser>> loadsAllByIds(int[] userIds) {
-    }
-
-    static LiveData<List<MyUser>> loadsAllByIds(int[] userIds) {
-    }
-
     @Query("SELECT * FROM MyUser")
     List<MyUser> getAll();
     // استخراج مستعمل حسب رقم المميز لهid
     @Query("SELECT * FROM MyUser WHERE keyid IN (:userIds)")
 
-    List<MyUser> loadAllByIds(int userIds);
+    LiveData<List<MyUser> >loadAllByIds(int userIds);
     //هل المستعمل موجود حسب الايميل وكلمة السر
     //هل المستعمل موجود حسب الايميل وكلمة السر
     @Query("SELECT * FROM MyUser WHERE email = :myEmail AND passw = :myPassw LIMIT 1")
-    static LiveData<List<MyUser>> checkEmailPassw(String myEmail, String myPassw);
+    LiveData<List<MyUser>> checkEmailPassw(String myEmail, String myPassw);
+
+
     //فحص هل الايميل موجود من قبل
     @Query("SELECT * FROM MyUser WHERE email = :myEmail LIMIT 1")
     LiveData<List<MyUser>> checkEmail(String myEmail);
@@ -37,13 +33,18 @@ public interface MyUserQuery {
     void delete(MyUser[] user);
     //حذف حسب الرقم المميز id
     @Query("Delete From MyUser WHERE keyid=:id ")
-    static void delete(int id);
+    void delete(int id);
+
+
     //اضافة مستعمل واحد
     @Insert
     void insert(MyUser myUser);
     //تعديل مستعمل او قائمة مستعملين
     @Update
-    static void update(MyUser... values);
+    void update(MyUser... values) ;
+
+
+
 
 }
 
