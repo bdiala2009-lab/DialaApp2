@@ -7,18 +7,18 @@ import java.util.List;
 
 
 @Dao
-public interface flowersQuery {
+public interface FlowersQuery {
         /**
          *اعادة جميع معطيات جدول الورود
          * قائمة من الورود return@
          */
-        @Query( "SELECT*FROM flowers")
-        List<flowers> getAllflowers();
+        @Query( "SELECT * FROM Flowers")
+        List<Flowers> getAllflowers();
     /**
      ارجاع الورود حسب اسم الوردة وبالترتيب الطلبيات
      *رقم المستعمل *@param userid_p
      * @return
      */
-    @Query("SELECT*FROM flowers WHERE fname=flowerName ORDER BY OrderNumber DESC")
-    List<flowers> getAllTaskOrderby(string fname);
+    @Query("SELECT * FROM Flowers WHERE flowerName=:fname ORDER BY OrderNumber DESC")
+    List<Flowers> getAllflowerOrderby(String fname);
 }
