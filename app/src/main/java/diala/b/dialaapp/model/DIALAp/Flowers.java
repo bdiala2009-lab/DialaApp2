@@ -7,7 +7,7 @@ import androidx.room.PrimaryKey;
 public class Flowers {
     @PrimaryKey(autoGenerate = true)
     public long OrderNumber;
-    @ColumnInfo(name = "full_Name")//اعطاء اسم جديد للعامود-الصفة في الجدول
+    @ColumnInfo//اعطاء اسم جديد للعامود-الصفة في الجدول
     public String flowerName;
     public String color;
     public Double price;
