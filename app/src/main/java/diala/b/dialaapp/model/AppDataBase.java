@@ -6,7 +6,8 @@ import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
-import diala.b.dialaapp.model.DIALAp.flowersQuery;
+import diala.b.dialaapp.model.DIALAp.FlowersQuery;
+import diala.b.dialaapp.model.DIALAp.FlowersQuery;
 import diala.b.dialaapp.model.MyTaskTable.MyTask;
 import diala.b.dialaapp.model.MyTaskTable.MyTaskQuery;
 import diala.b.dialaapp.model.MyUserTable.MyUser;
@@ -45,7 +46,7 @@ import diala.b.dialaapp.model.mySubjectTable.MySubjectQuery;
          * @return
          */
         public abstract MyTaskQuery getMyTaskQuery();
-        public abstract flowersQuery getflowersQuery();
+        public abstract FlowersQuery getflowersQuery();
 
         /**
          * بناء قاعدة البيانات وإعادة قاعدة بيانات
