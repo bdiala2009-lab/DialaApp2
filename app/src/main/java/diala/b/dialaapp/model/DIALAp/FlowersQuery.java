@@ -1,4 +1,7 @@
 package diala.b.dialaapp.model.DIALAp;
+import diala.b.dialaapp.model.DIALAp.Flowers;
+
+import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
@@ -7,65 +10,59 @@ import androidx.room.Update;
 
 import java.util.List;
 
-
 @Dao
 public interface FlowersQuery {
-    /*
-     * اعادة جميع معطيات جدول الورود
-     * قائمة من الورود return@
+
+    /**
+     * إعادة جميع معطيات جدول الورود
+     * @return قائمة من الورود
      */
     @Query("SELECT * FROM Flowers")
-    List<Flowers> getAllflowers();
+   LiveData<List<Flowers>> getAllFlowers();
 
-    /*
-     * ارجاع الورود حسب اسم الوردة وبالترتيب الطلبيات
-     * رقم المستعمل *@param userid_p
-     *
-     * @return
+    /**
+     * ارجاع الورود حسب اسم الوردة وبالترتيب
+     * @param fname اسم الوردة
+     * @return قائمة الورود
      */
     @Query("SELECT * FROM Flowers WHERE flowerName=:fname ORDER BY OrderNumber DESC")
     List<Flowers> getAllflowerOrderby(String fname);
 
-    /*
-     * ارجاع طلبيات حسب اسم الوردة واذا انتهت ام لا ومرتبة تنازليا حسب الاهمية
-     * اسم الزهرة *@param flowerName
-     * هل تمت ام لا@param isCompleted
-     *
-     * @return قائمة مهمات
+    /**
+     * ارجاع طلبيات حسب اسم الوردة وإذا انتهت أم لا ومرتبة تنازلياً
+     * @param fname اسم الزهرة
+     * @param isCompleted هل تمت أم لا
+     * @return قائمة ورود
      */
     @Query("SELECT * FROM Flowers WHERE flowerName=:fname AND isCompleted=:isCompleted " +
             "ORDER BY OrderNumber DESC")
     List<Flowers> getAllFlowerOrderedBy(String fname, boolean isCompleted);
 
-    /*
-     * إدخال مهام
-     *
+    /**
+     * إدخال مجموعة ورود
      * @param f مجموعة ورود
      */
     @Insert
-    default void insertflower(Flowers... f) // ثلاثة نقاط تعني مجموعة
-    {
+    void insertflower(Flowers... f); // ثلاثة نقاط تعني مجموعة
 
-    }
-
-    /*
-     * تعديل المهمات
-     *
-     * @param tasks مجموعة مهام للتعديل (التعديل حسب المفتاح الرئيسي)
+    /**
+     * تعديل المهام/الورود
+     * @param f مجموعة ورود للتعديل
      */
     @Update
     void updateflower(Flowers... f);
 
-    /*
-     * حذف مهمة أو مهام
-     *
-     * @param flowers حذف المهام (حسب المفتاح الرئيسي)
+    /**
+     * حذف وردة أو مجموعة ورود
+     * @param f مجموعة ورود للحذف
      */
     @Delete
    void deleteflower(Flowers... f);
 
-
-
+    /**
+     * حذف وردة حسب الاسم
+     * @param fname اسم الوردة المراد حذفها
+     */
     @Query("DELETE FROM Flowers WHERE flowerName=:fname")
      void deleteflower(String fname);
 

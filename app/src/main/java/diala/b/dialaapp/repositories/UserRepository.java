@@ -34,11 +34,11 @@ public LiveData<List<MyUser>>getAllUsers(){
     return allUsers;
 }
 
-public LiveData<List<MyUser>>loadsAllByIds(int[] Id){
-    return  MyUserQuery.loadsAllByIds(Id);
+public LiveData<List<MyUser>>loadsAllByIds(int Id){
+    return  userQuery.loadAllByIds(Id);
 }
     public  LiveData<List<MyUser>>checkEmailPassw(String myEmail,String myPassw){
-    return MyUserQuery.checkEmailPassw(myEmail,myPassw);
+    return userQuery.checkEmailPassw(myEmail,myPassw);
     }
     public LiveData<List<MyUser>> checkEmail(String myEmail){
     return userQuery.checkEmail(myEmail);
@@ -50,13 +50,13 @@ public LiveData<List<MyUser>>loadsAllByIds(int[] Id){
         userQuery.delete(Users);
     }
     public void delete(int id){
-    MyUserQuery.delete(id);
+    userQuery.delete(id);
     }
     public void insert (MyUser myUser){
     userQuery.insert(myUser);
     }
     public void update(MyUser...values){
-    MyUserQuery.update(values);
+    userQuery.update(values);
     }
 }
 

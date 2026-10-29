@@ -1,12 +1,12 @@
-package diala.b.dialaapp.model;
 
+package diala.b.dialaapp.model;
 import android.content.Context;
 
 import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
-import diala.b.dialaapp.model.DIALAp.FlowersQuery;
+import diala.b.dialaapp.model.DIALAp.Flowers;
 import diala.b.dialaapp.model.DIALAp.FlowersQuery;
 import diala.b.dialaapp.model.MyTaskTable.MyTask;
 import diala.b.dialaapp.model.MyTaskTable.MyTaskQuery;
@@ -20,7 +20,7 @@ import diala.b.dialaapp.model.mySubjectTable.MySubjectQuery;
      * الفئة المسؤولة عن بناء قاعدة البيانات بكل جداولها
      * وتوفر لنا كائن للتعامل مع قاعدة البيانات
      */
-    @Database(entities={MyUser.class, MySubject.class, MyTask.class},version=1)
+    @Database(entities={Flowers.class, MyTask.class,MyUser.class, MySubject.class},version=1)
 
     public abstract   class AppDataBase extends RoomDatabase{
         /**
