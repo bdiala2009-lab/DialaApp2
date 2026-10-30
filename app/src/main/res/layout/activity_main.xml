@@ -5,39 +5,30 @@
     android:id="@+id/LinearLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
     tools:context=".viewPkg.MainActivity">
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/btnAddTaskScreen"
-        android:layout_width="299dp"
-        android:layout_height="84dp"
-        android:background="#E39FE9"
-        android:shadowColor="#EF9AB6"
-        android:text="Add New Task"
-        android:textColor="#E2A0E9"
-        android:textColorHighlight="#E9B6C6"
-        android:textColorHint="#EF97B6"
-        app:iconTint="#EF99B2"
-        app:iconTintMode="add"
-        tools:layout_editor_absoluteX="52dp"
-        tools:layout_editor_absoluteY="84dp" />
 
     <Button
         android:id="@+id/btnRegisterScreen"
-        android:layout_width="335dp"
-        android:layout_height="101dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_margin="20dp"
         android:text="Register User"
-        tools:layout_editor_absoluteX="38dp"
-        tools:layout_editor_absoluteY="211dp" />
+        android:textSize="34sp"
+        app:cornerRadius="30dp" />
+
+    <Button
+        android:id="@+id/btnAddTaskScreen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="20dp"
+        android:text="Add New Task"
+        android:textColor="#E2A0E9"
+        android:textSize="34sp"
+        app:cornerRadius="30dp" />
 
 </LinearLayout>
