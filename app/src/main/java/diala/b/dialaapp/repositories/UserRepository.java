@@ -58,6 +58,8 @@ public LiveData<List<MyUser>>loadsAllByIds(int Id){
     public void update(MyUser...values){
     userQuery.update(values);
     }
+
+
 }
 
 

@@ -20,7 +20,7 @@ import diala.b.dialaapp.model.mySubjectTable.MySubjectQuery;
      * الفئة المسؤولة عن بناء قاعدة البيانات بكل جداولها
      * وتوفر لنا كائن للتعامل مع قاعدة البيانات
      */
-    @Database(entities={Flowers.class, MyTask.class,MyUser.class, MySubject.class},version=1)
+    @Database(entities={Flowers.class, MyTask.class,MyUser.class, MySubject.class},version=2)
 
     public abstract   class AppDataBase extends RoomDatabase{
         /**

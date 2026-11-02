@@ -35,8 +35,8 @@ public class MainActivity extends AppCompatActivity {
         MySubject s2 = new MySubject();
         s2.title = "Computers";
 //4 اضافة كائن للجدول
-        subjectQuery.insert(s1);
-        subjectQuery.insert(s2);
+//        subjectQuery.insert(s1);
+//        subjectQuery.insert(s2);
 
 
         setContentView(R.layout.activity_main);

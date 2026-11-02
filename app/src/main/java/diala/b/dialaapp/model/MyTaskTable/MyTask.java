@@ -1,6 +1,7 @@
 package diala.b.dialaapp.model.MyTaskTable;
 
 import androidx.room.Entity;
+import androidx.room.PrimaryKey;
 
 /**
  * فئة تمثل مهمة
@@ -11,7 +12,7 @@ public class MyTask
     public long getSubjId() {
         return subjId;
     }
-
+@PrimaryKey
 public long keyid;
     /** رقم المهمة */
     /** 5-1: رقم المهمة */
