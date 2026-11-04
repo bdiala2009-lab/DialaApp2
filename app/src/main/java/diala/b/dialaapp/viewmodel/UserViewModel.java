@@ -8,7 +8,9 @@ import androidx.lifecycle.LiveData;
 
 import java.util.List;
 
+import diala.b.dialaapp.model.MyTaskTable.MyTask;
 import diala.b.dialaapp.model.MyUserTable.MyUser;
+import diala.b.dialaapp.repositories.TaskRepository;
 import diala.b.dialaapp.repositories.UserRepository;
 
 /**
@@ -29,14 +31,8 @@ public class UserViewModel extends AndroidViewModel {
         super(application);
         repository = new UserRepository(application);
     }
-    /**
-     * إدراج مستخدم جديد في قاعدة البيانات (التسجيل / Sign Up).
-     *
-     * @param user كائن المستخدم المراد إضافته.
-     */
-    public void insert(MyUser user) {
-        repository.insert(user);
-    }
+
+
 
     /**
      * جلب جميع المستخدمين من قاعدة البيانات.
@@ -58,59 +54,63 @@ public class UserViewModel extends AndroidViewModel {
     }
 
     /**
-     * التحقق من البريد الإلكتروني وكلمة المرور عند تسجيل الدخول.
+     * التحقق من بيانات تسجيل الدخول (تسجيل الدخول / Sign In).
      *
-     * @param email البريد الإلكتروني.
+     * @param email    البريد الإلكتروني للمستخدم.
      * @param password كلمة المرور.
-     * @return LiveData تحتوي على نتيجة التحقق من الحساب.
+     * @return كائن {@link MyUser} المطابق للبيانات، أو null في حال خطأ البريد أو كلمة المرور.
      */
     public LiveData<List<MyUser>> checkEmailPassw(String email, String password) {
         return repository.checkEmailPassw(email, password);
     }
 
     /**
-     * التحقق مما إذا كان البريد الإلكتروني مسجلاً مسبقاً في النظام.
+     * البحث عن مستخدم بواسطة البريد الإلكتروني للتحقق من وجوده مسبقاً.
      *
-     * @param email البريد الإلكتروني المراد فحصه.
-     * @return LiveData تحتوي على نتيجة الفحص.
+     * @param email البريد الإلكتروني المراد البحث عنه.
+     * @return كائن {@link MyUser} إن وجد، أو null إذا لم يوجد.
      */
+
     public LiveData<List<MyUser>> checkEmail(String email) {
         return repository.checkEmail(email);
     }
 
     /**
-     * إدراج مستخدم جديد أو مجموعة مستخدمين عبر المستودع.
+     * إدراج مستخدم جديد في قاعدة البيانات (التسجيل / Sign Up).
      *
-     * @param users المستخدمون المراد إضافتهم.
+     * @param user كائن المستخدم المراد إضافته.
      */
-    public void insertUser(MyUser... users) {
-        repository.insertUser(users);
-    }
+        public void insert(MyUser user) {
+            repository.insertUser(user);
+        }
 
     /**
-     * تحديث بيانات مستخدم أو مجموعة مستخدمين عبر المستودع.
-     *
-     * @param users المستخدمون المراد تحديث بياناتهم.
-     */
-    public void updateUser(MyUser... users) {
-        repository.updateUser(users);
-    }
+         * تحديث بيانات مستخدم أو مجموعة مستخدمين عبر المستودع.
+         *
+         * @param user المستخدمون المراد تحديث بياناتهم.
+         */
+        public void updateUser(MyUser user) {
+            repository.updateUser(user);
+        }
 
     /**
-     * حذف مستخدم أو مجموعة مستخدمين عبر المستودع.
-     *
-     * @param users المستخدمون المراد حذفهم.
-     */
-    public void deleteUser(MyUser... users) {
-        repository.deleteUser(users);
-    }
+         * حذف مستخدم أو مجموعة مستخدمين عبر المستودع.
+         *
+         * @param users المستخدمون المراد حذفهم.
+         */
+        public void deleteUser(MyUser... users) {
+            repository.deleteUser(users);
+        }
 
     /**
-     * حذف مستخدم محدد باستخدام معرفه الفريد (User ID).
-     *
-     * @param userId معرف المستخدم المراد حذفه.
-     */
-    public void deleteUser(int userId) {
-        repository.deleteUser(userId);
-    }
+         * حذف مستخدم محدد باستخدام معرفه الفريد (User ID).
+         *
+         * @param userId معرف المستخدم المراد حذفه.
+         */
+        public void deleteUser(int userId) {
+            repository.deleteUser(userId);
+        }
 }
+
+
+

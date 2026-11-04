@@ -47,6 +47,7 @@ public class UserRepository {
         return userQuery.loadAllByIds(id);
     }
 
+
     /**
      * التحقق من وجود المستخدم بواسطة البريد الإلكتروني وكلمة المرور.
      *
@@ -103,4 +104,6 @@ public class UserRepository {
     public void deleteUser(int id) {
         userQuery.delete(id);
     }
+
+
 }
