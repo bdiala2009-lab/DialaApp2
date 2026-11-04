@@ -8,45 +8,41 @@ import androidx.room.Query;
 import androidx.room.Update;
 
 import java.util.List;
+
 @Dao
 public interface MyUserQuery {
     @Query("SELECT * FROM MyUser")
     List<MyUser> getAll();
-    // استخراج مستعمل حسب رقم المميز لهid
-    @Query("SELECT * FROM MyUser WHERE keyid IN (:userIds)")
 
-    LiveData<List<MyUser> >loadAllByIds(int userIds);
-    //هل المستعمل موجود حسب الايميل وكلمة السر
-    //هل المستعمل موجود حسب الايميل وكلمة السر
+    // استخراج مستعمل حسب الرقم المميز له id
+    @Query("SELECT * FROM MyUser WHERE keyid IN (:userIds)")
+    LiveData<List<MyUser>> loadAllByIds(int userIds);
+
+    // هل المستعمل موجود حسب الايميل وكلمة السر
     @Query("SELECT * FROM MyUser WHERE email = :myEmail AND passw = :myPassw LIMIT 1")
     LiveData<List<MyUser>> checkEmailPassw(String myEmail, String myPassw);
 
-
-    //فحص هل الايميل موجود من قبل
+    // فحص هل الايميل موجود من قبل
     @Query("SELECT * FROM MyUser WHERE email = :myEmail LIMIT 1")
     LiveData<List<MyUser>> checkEmail(String myEmail);
+
     // اضافة مستعمل او مجموعة مستعملين
     @Insert
     void insertAll(MyUser... users);
-    // حذف
+
+    // حذف مستعملين
     @Delete
-    void delete(MyUser[] user);
-    //حذف حسب الرقم المميز id
-    @Query("Delete From MyUser WHERE keyid=:id ")
+    void delete(MyUser... users);
+
+    // حذف حسب الرقم المميز id
+    @Query("DELETE FROM MyUser WHERE keyid=:id")
     void delete(int id);
 
-
-    //اضافة مستعمل واحد
+    // اضافة مستعمل واحد
     @Insert
     void insert(MyUser myUser);
-    //تعديل مستعمل او قائمة مستعملين
+
+    // تعديل مستعمل او قائمة مستعملين
     @Update
-    void update(MyUser... values) ;
-
-
-
-
+    void update(MyUser... values);
 }
-
-
-

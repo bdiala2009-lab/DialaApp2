@@ -1,3 +1,25 @@
 <resources>
     <string name="app_name">DialaApp2</string>
+
+    <!-- Sign In & Sign Up Screens -->
+    <string name="welcome_back">Welcome Back 👋</string>
+    <string name="sign_in_subtitle">Sign in to your account to continue</string>
+    <string name="create_account">Create Account ✨</string>
+    <string name="sign_up_subtitle">Sign up to get started with your account</string>
+    <string name="hint_full_name">Full Name</string>
+    <string name="hint_email">Email Address</string>
+    <string name="hint_password">Password</string>
+    <string name="hint_confirm_password">Confirm Password</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="sign_in">Sign In</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="or_continue_with">or continue with</string>
+    <string name="google">Google</string>
+    <string name="apple">Apple</string>
+    <string name="desc_google_sign_in">Google Sign In</string>
+    <string name="desc_apple_sign_in">Apple Sign In</string>
+    <string name="desc_google_sign_up">Google Sign Up</string>
+    <string name="desc_apple_sign_up">Apple Sign Up</string>
+    <string name="dont_have_account">Don\'t have an account? </string>
+    <string name="already_have_account">Already have an account? </string>
 </resources>
