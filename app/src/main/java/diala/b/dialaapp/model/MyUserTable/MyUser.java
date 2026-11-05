@@ -32,11 +32,11 @@ public class MyUser {
         this.email = email;
     }
 
-    public String getPassw() {
+    public String getPassword() {
         return passw;
     }
 
-    public void setPassw(String passw) {
+    public void setPassword(String passw) {
         this.passw = passw;
     }
 

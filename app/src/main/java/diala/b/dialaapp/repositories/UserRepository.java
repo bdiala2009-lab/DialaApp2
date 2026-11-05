@@ -51,11 +51,11 @@ public class UserRepository {
     /**
      * التحقق من وجود المستخدم بواسطة البريد الإلكتروني وكلمة المرور.
      *
-     * @param email البريد الإلكتروني.
+     * @param email    البريد الإلكتروني.
      * @param password كلمة المرور.
      * @return LiveData تحتوي على بيانات المستخدم في حال وجوده.
      */
-    public LiveData<List<MyUser>> checkEmailPassw(String email, String password) {
+    public MyUser checkEmailPassw(String email, String password) {
         return userQuery.checkEmailPassw(email, password);
     }
 
@@ -65,7 +65,7 @@ public class UserRepository {
      * @param email البريد الإلكتروني المراد فحصه.
      * @return LiveData تحتوي على بيانات المستخدم إن وجد.
      */
-    public LiveData<List<MyUser>> checkEmail(String email) {
+    public MyUser checkEmail(String email) {
         return userQuery.checkEmail(email);
     }
 

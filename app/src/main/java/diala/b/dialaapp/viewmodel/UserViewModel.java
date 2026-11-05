@@ -8,9 +8,7 @@ import androidx.lifecycle.LiveData;
 
 import java.util.List;
 
-import diala.b.dialaapp.model.MyTaskTable.MyTask;
 import diala.b.dialaapp.model.MyUserTable.MyUser;
-import diala.b.dialaapp.repositories.TaskRepository;
 import diala.b.dialaapp.repositories.UserRepository;
 
 /**
@@ -60,7 +58,7 @@ public class UserViewModel extends AndroidViewModel {
      * @param password كلمة المرور.
      * @return كائن {@link MyUser} المطابق للبيانات، أو null في حال خطأ البريد أو كلمة المرور.
      */
-    public LiveData<List<MyUser>> checkEmailPassw(String email, String password) {
+    public MyUser checkEmailPassw(String email, String password) {
         return repository.checkEmailPassw(email, password);
     }
 
@@ -71,7 +69,7 @@ public class UserViewModel extends AndroidViewModel {
      * @return كائن {@link MyUser} إن وجد، أو null إذا لم يوجد.
      */
 
-    public LiveData<List<MyUser>> checkEmail(String email) {
+    public MyUser checkEmail(String email) {
         return repository.checkEmail(email);
     }
 

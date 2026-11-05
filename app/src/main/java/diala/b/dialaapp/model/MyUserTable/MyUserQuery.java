@@ -20,11 +20,11 @@ public interface MyUserQuery {
 
     // هل المستعمل موجود حسب الايميل وكلمة السر
     @Query("SELECT * FROM MyUser WHERE email = :myEmail AND passw = :myPassw LIMIT 1")
-    LiveData<List<MyUser>> checkEmailPassw(String myEmail, String myPassw);
+    MyUser checkEmailPassw(String myEmail, String myPassw);
 
     // فحص هل الايميل موجود من قبل
     @Query("SELECT * FROM MyUser WHERE email = :myEmail LIMIT 1")
-    LiveData<List<MyUser>> checkEmail(String myEmail);
+    MyUser checkEmail(String myEmail);
 
     // اضافة مستعمل او مجموعة مستعملين
     @Insert

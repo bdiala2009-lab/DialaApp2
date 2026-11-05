@@ -1,17 +1,23 @@
 package diala.b.dialaapp.viewPkg;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.lifecycle.LiveData;
 import androidx.lifecycle.ViewModelProvider;
 
+import java.util.List;
+
 import diala.b.dialaapp.R;
+import diala.b.dialaapp.model.MyUserTable.MyUser;
 import diala.b.dialaapp.viewmodel.UserViewModel;
 
 public class SignInActivity extends AppCompatActivity {
@@ -55,7 +61,7 @@ private UserViewModel userViewModel;
             etPassword.requestFocus();
             return;
         }
-        MyUser user = userViewModel.checkEmailPassw(email, password);
+       MyUser user = userViewModel.checkEmailPassw(email, password);
         if (user != null) {
             Toast.makeText(this, "Welcome, " + user.getFullName(), Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(SignInActivity.this, MainActivity.class);
