@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
         bntAddNewTask.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(MainActivity.this, AddTaskActivity.class);
+                Intent i = new Intent(MainActivity.this,SignInActivity.class);
                 startActivity(i);
             }
 

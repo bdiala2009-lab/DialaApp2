@@ -26,7 +26,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_margin="20dp"
-        android:text="Add New Task"
+        android:text="SignIn"
         android:textColor="#E2A0E9"
         android:textSize="34sp"
         app:cornerRadius="30dp" />
