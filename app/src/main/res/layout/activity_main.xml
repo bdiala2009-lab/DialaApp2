@@ -14,8 +14,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:gravity="center"
         android:layout_margin="20dp"
+        android:gravity="center"
         android:text="Register User"
         android:textSize="34sp"
         app:cornerRadius="30dp" />

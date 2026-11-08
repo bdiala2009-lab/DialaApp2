@@ -1,6 +1,8 @@
 package diala.b.dialaapp.viewPkg;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -46,42 +48,49 @@ public class SignUpActivity extends AppCompatActivity {
         btnSignUp = findViewById(R.id.btnSignUp);
         tvSignIn = findViewById(R.id.tvSignIn);
         btnSignUp.setOnClickListener(view -> signUpUser());
-        userViewModel=new ViewModelProvider(this).get(UserViewModel.class);
-    }
-    private void signUpUser(){
-        String fullName = etFullName.getText().toString().trim();
-        String email = etEmail.getText().toString().trim();
-        String password = etPassword.getText().toString().trim();
-        String confirmPassword = etConfirmPassword.getText().toString().trim();
-        if (fullName.isEmpty()) {
-            etFullName.setError("Full name is required");
-            etFullName.requestFocus();
-            return;
-        }
+        userViewModel = new ViewModelProvider(this).get(UserViewModel.class);
 
-        if (email.isEmpty()) {
-            etEmail.setError("Email is required");
-            etEmail.requestFocus();
-            return;
-        }
 
-        if (password.isEmpty()) {
-            etPassword.setError("Password is required");
-            etPassword.requestFocus();
-            return;
-        }
+        tvSignIn.setOnClickListener(v -> {
+            Intent intent = new Intent(SignUpActivity.this, SignInActivity.class);
+            startActivity(intent);
+        });
 
-        if (!password.equals(confirmPassword)) {
-            etConfirmPassword.setError("Passwords do not match");
-            etConfirmPassword.requestFocus();
-            return;
+        private void signUpUser () {
+            String fullName = etFullName.getText().toString().trim();
+            String email = etEmail.getText().toString().trim();
+            String password = etPassword.getText().toString().trim();
+            String confirmPassword = etConfirmPassword.getText().toString().trim();
+            if (fullName.isEmpty()) {
+                etFullName.setError("Full name is required");
+                etFullName.requestFocus();
+                return;
+            }
+
+            if (email.isEmpty()) {
+                etEmail.setError("Email is required");
+                etEmail.requestFocus();
+                return;
+            }
+
+            if (password.isEmpty()) {
+                etPassword.setError("Password is required");
+                etPassword.requestFocus();
+                return;
+            }
+
+            if (!password.equals(confirmPassword)) {
+                etConfirmPassword.setError("Passwords do not match");
+                etConfirmPassword.requestFocus();
+                return;
+            }
+            MyUser newUser = new MyUser();
+            newUser.setFullName(fullName);
+            newUser.setEmail(email);
+            newUser.setPassword(password);
+            userViewModel.insert(newUser);
+            Toast.makeText(this, "Account created successfully", Toast.LENGTH_SHORT).show();
+            finish();
         }
-        MyUser newUser = new MyUser();
-        newUser.setFullName(fullName);
-        newUser.setEmail(email);
-        newUser.setPassword(password);
-        userViewModel.insert(newUser);
-        Toast.makeText(this, "Account created successfully", Toast.LENGTH_SHORT).show();
-        finish();
     }
 }
