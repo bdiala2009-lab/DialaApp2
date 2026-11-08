@@ -23,6 +23,7 @@ import diala.b.dialaapp.viewmodel.UserViewModel;
 public class SignInActivity extends AppCompatActivity {
 private EditText etEmail,etPassword;
 Button btnSignIn;
+Button tvSignUp;
 private UserViewModel userViewModel;
     /**
      * يُستدعى عند إنشاء النشاط.
@@ -43,9 +44,12 @@ private UserViewModel userViewModel;
         etEmail = findViewById(R.id.etEmail);
         etPassword = findViewById(R.id.etPassword);
         btnSignIn = findViewById(R.id.btnSignIn);
-
+        tvSignUp=findViewById(R.id.tvSignUp);
         btnSignIn.setOnClickListener(v -> signInUser());
-
+        tvSignUp.setOnClickListener(v ->{
+            Intent intent=new Intent(SignInActivity.this,SignUpActivity.class)
+                    startActivity(intent);
+        }  );
         userViewModel = new ViewModelProvider(this).get(UserViewModel.class);
     }
     private void signInUser(){
