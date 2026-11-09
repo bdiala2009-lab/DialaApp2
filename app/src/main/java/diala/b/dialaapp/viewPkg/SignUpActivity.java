@@ -55,7 +55,7 @@ public class SignUpActivity extends AppCompatActivity {
             Intent intent = new Intent(SignUpActivity.this, SignInActivity.class);
             startActivity(intent);
         });
-
+    }
         private void signUpUser () {
             String fullName = etFullName.getText().toString().trim();
             String email = etEmail.getText().toString().trim();
@@ -78,6 +78,11 @@ public class SignUpActivity extends AppCompatActivity {
                 etPassword.requestFocus();
                 return;
             }
+            if (password.length() < 8) {
+                etPassword.setError("Password must be at least 8 characters");
+                etPassword.requestFocus();
+                return;
+            }
 
             if (!password.equals(confirmPassword)) {
                 etConfirmPassword.setError("Passwords do not match");
@@ -93,4 +98,3 @@ public class SignUpActivity extends AppCompatActivity {
             finish();
         }
     }
-}
