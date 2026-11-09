@@ -1,9 +1,12 @@
 package diala.b.dialaapp.viewPkg;
 
+import static diala.b.dialaapp.R.id.tvSignUp;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -23,7 +26,7 @@ import diala.b.dialaapp.viewmodel.UserViewModel;
 public class SignInActivity extends AppCompatActivity {
 private EditText etEmail,etPassword;
 Button btnSignIn;
-Button tvSignUp;
+ private TextView tvSignUp;
 private UserViewModel userViewModel;
     /**
      * يُستدعى عند إنشاء النشاط.
@@ -44,12 +47,18 @@ private UserViewModel userViewModel;
         etEmail = findViewById(R.id.etEmail);
         etPassword = findViewById(R.id.etPassword);
         btnSignIn = findViewById(R.id.btnSignIn);
-        tvSignUp=findViewById(R.id.tvSignUp);
+        tvSignUp = findViewById(R.id.tvSignUp);
         btnSignIn.setOnClickListener(v -> signInUser());
-        tvSignUp.setOnClickListener(v ->{
-            Intent intent=new Intent(SignInActivity.this,SignUpActivity.class)
-                    startActivity(intent);
-        }  );
+
+
+// 2. إضافة حدث الضغط (ClickListener) للانتقال لشاشة إنشاء الحساب
+        tvSignUp.setOnClickListener(v -> {
+            // إنشاء Intent للربط بين الشاشتين
+            // المعامل الأول: اسم الكلاس الحالي (مثلاً SignInActivity.this)
+            // المعامل الثاني: اسم كلاس الشاشة التي تريد الذهاب إليها (مثلاً SignUpActivity.class)
+            Intent intent = new Intent(SignInActivity.this, SignUpActivity.class);
+            startActivity(intent);
+        });
         userViewModel = new ViewModelProvider(this).get(UserViewModel.class);
     }
     private void signInUser(){
