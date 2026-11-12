@@ -11,8 +11,8 @@
     <!-- Center Container: Logo, Title, Subtitle, Pink ProgressBar -->
     <LinearLayout
         android:id="@+id/centerContainer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="524dp"
+        android:layout_height="591dp"
         android:gravity="center"
         android:orientation="vertical"
         android:padding="24dp"
@@ -24,8 +24,8 @@
         <!-- App Logo -->
         <ImageView
             android:id="@+id/imgLogo"
-            android:layout_width="96dp"
-            android:layout_height="96dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:contentDescription="@string/app_name"
             android:src="@drawable/ic_app_logo" />
 
@@ -54,8 +54,8 @@
         <!-- Vibrant Pink ProgressBar -->
         <ProgressBar
             android:id="@+id/progressBar"
-            android:layout_width="36dp"
-            android:layout_height="36dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
             android:indeterminateTint="@color/primary" />
 
