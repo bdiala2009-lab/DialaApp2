@@ -1,6 +1,15 @@
 <resources>
     <string name="app_name">DialaApp2</string>
 
+    <!-- Splash Screen -->
+    <string name="welcome_title">Welcome ✨</string>
+    <string name="splash_subtitle">Sign in to your account or create a new one</string>
+    <string name="app_version">v1.0.0</string>
+
+    <!-- Welcome / Main Screen -->
+    <string name="get_started">Get Started ✨</string>
+    <string name="get_started_subtitle">Sign in to your account or create a new one to get started</string>
+
     <!-- Sign In & Sign Up Screens -->
     <string name="welcome_back">Welcome Back 👋</string>
     <string name="sign_in_subtitle">Sign in to your account to continue</string>

@@ -83,12 +83,19 @@ public class SignUpActivity extends AppCompatActivity {
                 etPassword.requestFocus();
                 return;
             }
-
+// أبسط طريقة للتأكد من وجود حروف وأرقام معاً
+            if (!password.matches(".*[a-zA-Z].*") || !password.matches(".*[0-9].*")) {
+                etPassword.setError("Password must contain letters and numbers");
+                etPassword.requestFocus();
+                return;
+            }
             if (!password.equals(confirmPassword)) {
                 etConfirmPassword.setError("Passwords do not match");
                 etConfirmPassword.requestFocus();
                 return;
             }
+
+
             MyUser newUser = new MyUser();
             newUser.setFullName(fullName);
             newUser.setEmail(email);

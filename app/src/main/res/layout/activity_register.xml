@@ -265,35 +265,6 @@
             </LinearLayout>
 
             <!-- Apple Button -->
-            <LinearLayout
-                android:id="@+id/btnApple"
-                android:layout_width="0dp"
-                android:layout_height="52dp"
-                android:layout_marginStart="8dp"
-                android:layout_weight="1"
-                android:background="@drawable/bg_social_button"
-                android:clickable="true"
-                android:focusable="true"
-                android:gravity="center"
-                android:orientation="horizontal"
-                android:paddingStart="12dp"
-                android:paddingEnd="12dp">
-
-                <ImageView
-                    android:layout_width="22dp"
-                    android:layout_height="22dp"
-                    android:contentDescription="@string/desc_apple_sign_up"
-                    android:src="@drawable/ic_apple" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:text="@string/apple"
-                    android:textColor="@color/text_primary"
-                    android:textSize="14sp"
-                    android:textStyle="bold" />
-            </LinearLayout>
 
         </LinearLayout>
 
