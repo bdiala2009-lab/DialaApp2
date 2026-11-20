@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
         bntAddNewTask.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(MainActivity.this,SignInActivity.class);
+                Intent i = new Intent(MainActivity.this, SignInActivity.class);
                 startActivity(i);
             }
 
@@ -72,26 +72,24 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
+
     @Override  //بناء قائمة
-    public boolean onCreateOptionsMenu(Menu menu)
-    {
-        getMenuInflater().inflate(R.menu.main_menu,menu);
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main_menu, menu);
         return true;
     }
+
     @Override//معالجة حدث اختيار عنصر من القائمة
-    public boolean onOptionsItemSelected(MenuItem item)
-    {
-        if (item.getItemId()==R.id.itemSettings)
-        {
-            Toast.makeText(this,"Settings",Toast.LENGTH_SHORT).show();
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == R.id.itemSettings) {
+            Toast.makeText(this, "Settings", Toast.LENGTH_SHORT).show();
         }
-        if (item.getItemId()==R.id.itemSettings)
-        {
-            Toast.makeText(this,"Settings",Toast.LENGTH_SHORT).show();
+        if (item.getItemId() == R.id.itemSignOut) {
+            Toast.makeText(this, "Settings", Toast.LENGTH_SHORT).show();
         }
-        if (item.getItemId()==R.id.itemHis)
-        {
-            Toast.makeText(this,"Settings",Toast.LENGTH_SHORT).show();
+        if (item.getItemId() == R.id.itemHistory) {
+            Toast.makeText(this, "Settings", Toast.LENGTH_SHORT).show();
         }
+        return true;
     }
 }
