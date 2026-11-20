@@ -45,6 +45,14 @@
             android:name=".viewPkg.SettingsActivity"
             android:exported="false"
             android:label="@string/title_activity_settings" />
+        <activity
+            android:name=".viewPkg.History"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".viewPkg.SignOut"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
     </application>
 
 </manifest>
