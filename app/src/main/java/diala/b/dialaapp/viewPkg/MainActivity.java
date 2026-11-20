@@ -2,8 +2,11 @@ package diala.b.dialaapp.viewPkg;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -67,5 +70,28 @@ public class MainActivity extends AppCompatActivity {
             }
 
         });
+
+    }
+    @Override  //بناء قائمة
+    public boolean onCreateOptionsMenu(Menu menu)
+    {
+        getMenuInflater().inflate(R.menu.main_menu,menu);
+        return true;
+    }
+    @Override//معالجة حدث اختيار عنصر من القائمة
+    public boolean onOptionsItemSelected(MenuItem item)
+    {
+        if (item.getItemId()==R.id.itemSettings)
+        {
+            Toast.makeText(this,"Settings",Toast.LENGTH_SHORT).show();
+        }
+        if (item.getItemId()==R.id.itemSettings)
+        {
+            Toast.makeText(this,"Settings",Toast.LENGTH_SHORT).show();
+        }
+        if (item.getItemId()==R.id.itemHis)
+        {
+            Toast.makeText(this,"Settings",Toast.LENGTH_SHORT).show();
+        }
     }
 }
