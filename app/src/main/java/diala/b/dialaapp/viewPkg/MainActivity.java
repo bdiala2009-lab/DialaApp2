@@ -2,6 +2,7 @@ package diala.b.dialaapp.viewPkg;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -82,14 +83,24 @@ public class MainActivity extends AppCompatActivity {
     @Override//معالجة حدث اختيار عنصر من القائمة
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == R.id.itemSettings) {
-            Toast.makeText(this, "Settings", Toast.LENGTH_SHORT).show();
+           Toast.makeText(this, "Settings", Toast.LENGTH_SHORT).show();
+            Intent i = new Intent(MainActivity.this, Settings.class);
+            startActivity(i);
         }
+
+
         if (item.getItemId() == R.id.itemSignOut) {
-            Toast.makeText(this, "Settings", Toast.LENGTH_SHORT).show();
-        }
+           Toast.makeText(this, "Settings", Toast.LENGTH_SHORT).show();
+        Intent i = new Intent(MainActivity.this, SignOut.class);
+        startActivity(i);
+    }
+
         if (item.getItemId() == R.id.itemHistory) {
-            Toast.makeText(this, "Settings", Toast.LENGTH_SHORT).show();
+           Toast.makeText(this, "History", Toast.LENGTH_SHORT).show();
+            Intent i = new Intent(MainActivity.this, History.class);
+            startActivity(i);
         }
+
         return true;
     }
 }
