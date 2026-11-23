@@ -119,8 +119,8 @@
                 <!-- Forgot Password Link -->
                 <TextView
                     android:id="@+id/tvForgotPassword"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="217dp"
+                    android:layout_height="65dp"
                     android:layout_gravity="end"
                     android:layout_marginTop="12dp"
                     android:background="?attr/selectableItemBackgroundBorderless"
@@ -128,8 +128,8 @@
                     android:focusable="true"
                     android:padding="4dp"
                     android:text="@string/forgot_password"
-                    android:textColor="@color/primary"
-                    android:textSize="14sp"
+                    android:textColor="@color/social_btn_border"
+                    android:textSize="20sp"
                     android:textStyle="bold" />
 
                 <!-- Primary Sign In Button with Pink Gradient -->
@@ -138,7 +138,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="56dp"
                     android:layout_marginTop="20dp"
-                    android:background="@drawable/bg_primary_button"
+                    android:background="?attr/colorOnTertiaryContainer"
                     android:text="@string/sign_in"
                     android:textAllCaps="false"
                     android:textColor="@color/white"
@@ -260,7 +260,7 @@
                 android:background="?attr/selectableItemBackgroundBorderless"
                 android:clickable="true"
                 android:focusable="true"
-                android:padding="4dp"
+                android:padding="16dp"
                 android:text="@string/sign_up"
                 android:textColor="@color/primary"
                 android:textSize="14sp"

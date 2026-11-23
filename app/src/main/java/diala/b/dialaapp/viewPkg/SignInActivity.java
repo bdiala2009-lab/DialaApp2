@@ -68,7 +68,7 @@ public class SignInActivity extends AppCompatActivity {
     }
 
     private void signInUser() {
-        String email = etEmail.getText().toString().trim();
+        String email = etEmail.getText().toString().trim().toLowerCase();
         String password = etPassword.getText().toString().trim();
         if (email.isEmpty()) {
             etEmail.setError("Email is required");

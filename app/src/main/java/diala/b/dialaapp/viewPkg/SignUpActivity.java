@@ -1,5 +1,7 @@
 package diala.b.dialaapp.viewPkg;
 
+import static java.lang.Character.toLowerCase;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -47,7 +49,7 @@ public class SignUpActivity extends AppCompatActivity {
         etConfirmPassword = findViewById(R.id.etConfirmPassword);
         btnSignUp = findViewById(R.id.btnSignUp);
         tvSignIn = findViewById(R.id.tvSignIn);
-        btnSignUp.setOnClickListener(view -> signUpUser());
+      btnSignUp.setOnClickListener(view -> signUpUser());
         userViewModel = new ViewModelProvider(this).get(UserViewModel.class);
 
 
@@ -55,13 +57,14 @@ public class SignUpActivity extends AppCompatActivity {
             Intent intent = new Intent(SignUpActivity.this, SignInActivity.class);
             startActivity(intent);
         });
-        btnSignUp.setOnClickListener(view -> {
-            Intent intent = new Intent(s)
-        });
+       // btnSignUp.setOnClickListener(view -> {
+      //      Intent intent = new Intent(SignUpActivity.this, MainActivity2.class);
+           // startActivity(intent);
+      //  });
     }
         private void signUpUser () {
             String fullName = etFullName.getText().toString().trim();
-            String email = etEmail.getText().toString().trim();
+            String email = etEmail.getText().toString().trim().toLowerCase();;
             String password = etPassword.getText().toString().trim();
             String confirmPassword = etConfirmPassword.getText().toString().trim();
             if (fullName.isEmpty()) {
@@ -105,6 +108,8 @@ public class SignUpActivity extends AppCompatActivity {
             newUser.setPassword(password);
             userViewModel.insert(newUser);
             Toast.makeText(this, "Account created successfully", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(SignUpActivity.this, MainActivity2.class);
+            startActivity(intent);
             finish();
         }
     }
