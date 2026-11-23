@@ -55,6 +55,9 @@ public class SignUpActivity extends AppCompatActivity {
             Intent intent = new Intent(SignUpActivity.this, SignInActivity.class);
             startActivity(intent);
         });
+        btnSignUp.setOnClickListener(view -> {
+            Intent intent = new Intent(s)
+        });
     }
         private void signUpUser () {
             String fullName = etFullName.getText().toString().trim();

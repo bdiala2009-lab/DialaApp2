@@ -10,7 +10,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 import diala.b.dialaapp.R;
 
-public class settings extends AppCompatActivity {
+public class Settings extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

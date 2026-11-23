@@ -2,14 +2,18 @@ package diala.b.dialaapp.viewPkg;
 
 import static diala.b.dialaapp.R.id.tvSignUp;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -24,10 +28,11 @@ import diala.b.dialaapp.model.MyUserTable.MyUser;
 import diala.b.dialaapp.viewmodel.UserViewModel;
 
 public class SignInActivity extends AppCompatActivity {
-private EditText etEmail,etPassword;
-Button btnSignIn;
- private TextView tvSignUp;
-private UserViewModel userViewModel;
+    private EditText etEmail, etPassword;
+    Button btnSignIn;
+    private TextView tvSignUp;
+    private UserViewModel userViewModel;
+
     /**
      * يُستدعى عند إنشاء النشاط.
      * يقوم بربط العناصر الرسومية، تهيئة {@link UserViewModel} وتفعيل زر تسجيل الدخول.
@@ -61,9 +66,10 @@ private UserViewModel userViewModel;
         });
         userViewModel = new ViewModelProvider(this).get(UserViewModel.class);
     }
-    private void signInUser(){
-        String email=etEmail.getText().toString().trim();
-        String password=etPassword.getText().toString().trim();
+
+    private void signInUser() {
+        String email = etEmail.getText().toString().trim();
+        String password = etPassword.getText().toString().trim();
         if (email.isEmpty()) {
             etEmail.setError("Email is required");
             etEmail.requestFocus();
@@ -74,15 +80,19 @@ private UserViewModel userViewModel;
             etPassword.requestFocus();
             return;
         }
-       MyUser user = userViewModel.checkEmailPassw(email, password);
+        MyUser user = userViewModel.checkEmailPassw(email, password);
         if (user != null) {
             Toast.makeText(this, "Welcome, " + user.getFullName(), Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(SignInActivity.this, MainActivity.class);
+            Intent intent = new Intent(SignInActivity.this, MainActivity2.class);
             startActivity(intent);
             finish();
         } else {
             Toast.makeText(this, "Invalid email or password", Toast.LENGTH_SHORT).show();
         }
     }
+
+
+
+
 }
 
