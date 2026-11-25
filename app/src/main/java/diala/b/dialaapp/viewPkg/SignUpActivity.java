@@ -107,8 +107,8 @@ public class SignUpActivity extends AppCompatActivity {
             newUser.setPassword(password);
             userViewModel.insert(newUser);
             Toast.makeText(this, "Account created successfully", Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(SignUpActivity.this, MainActivity2.class);
-            startActivity(intent);
+//            Intent intent = new Intent(SignUpActivity.this, MainActivity2.class);
+//            startActivity(intent);
             finish();
 
         }
