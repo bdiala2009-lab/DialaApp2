@@ -44,9 +44,10 @@ public class MainActivity2 extends AppCompatActivity {
         }
 
         if (item.getItemId() == R.id.itemSignOut) {
-            Toast.makeText(this, "SignOut", Toast.LENGTH_SHORT).show();
-            Intent i = new Intent(MainActivity2.this, SignOut.class);
-            startActivity(i);
+           // Toast.makeText(this, "SignOut", Toast.LENGTH_SHORT).show();
+         //   Intent i = new Intent(MainActivity2.this, SignOut.class);
+         //   startActivity(i);
+            showYesNoDialog();
         }
 
         if (item.getItemId() == R.id.itemHistory) {
